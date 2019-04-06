@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int mem[] = new int[11];
+		mem[1]=1;
+		mem[2]=2;
+		mem[3]=4;
+		while(n-->0) {
+			int num = sc.nextInt();
+	
+			for(int i=4; i<=num; i++) {
+				if(mem[i] > 0)
+					continue;
+				mem[i]= mem[i-3] + mem[i-2] + mem[i-1];					
+			}
+			System.out.println(mem[num]);
+		}
+
+	}
+}
